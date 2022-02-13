@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- Standard Meta -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <!-- Site Properties -->
+        <title>projet web dynamique</title>
+        <link rel="stylesheet" type="text/css" th:href="@{../custom.css}" />
+
+    </head>
+
+    <body>
+        <div class="ui five column grid">
+            <div class="row"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column">
+            	<a href='/'>Go Back</a>
+                <form th:object="${cardForm}" class="ui form" method="POST" th:action="@{/addCard}">
+                    <h3 class="ui dividing header">Add Card Information</h3>
+                    <div class="field">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Name" th:field="*{name}">
+                    </div>
+                    <div class="field">
+                        <label>Description</label>
+                        <input type="text" name="description" placeholder="Description" th:field="*{description}">
+                    </div>
+                    <div class="field">
+                        <label>Familly</label>
+                        <input type="text" name="family" placeholder="Family" th:field="*{family}">
+                    </div>
+                    <div class="field">
+                        <label>Affinity</label>
+                        <input type="text" name="affinity" placeholder="Affinity" th:field="*{affinity}">
+                    </div>
+                    <div class="field">
+                        <label>Energy</label>
+                        <input type="number" name="energy" placeholder="Energy" th:field="*{energy}">
+                    </div>
+                    <div class="field">
+                        <label>Hp</label>
+                        <input type="number" name="hp" placeholder="Hp" th:field="*{hp}">
+                    </div>
+                    <div class="field">
+                        <label>Defence</label>
+                        <input type="number" name="defence" placeholder="Defence" th:field="*{defence}">
+                    </div>
+                    <div class="field">
+                        <label>Attack</label>
+                        <input type="number" name="attack" placeholder="Attack" th:field="*{attack}">
+                    </div>
+                    <div class="field">
+                        <label>Price</label>
+                        <input type="number" name="price" placeholder="Price" th:field="*{price}">
+                    </div>
+                    <button class="ui button" type="submit" >Submit</button>
+                </form>
+            </div>
+        </div>
+        <script src="../js/animation-custom.js"></script> 
+        <script src="../js/card.js"></script> 
+    </body>
+</html>

@@ -14,15 +14,20 @@
 
     <body>
     <a href='/'>Go Back</a>
-    	<h1>Voici tous les Users</h1>
+    	<h1>Voici toutes les Cards</h1>
         <ul>
-  			<li th:each="user: ${userList}">
+  			<li th:each="card: ${cardList}">
   				<div>
-  					<p th:utext="${user.getLogin()}"></p>
-  					<p th:utext="${user.getPwd()}"></p>
-  					<p th:utext="${user.getAccount()}"></p>
-  					<p th:utext="${user.getSurName()}"></p>
-  					<p th:utext="${user.getLastName()}"></p>
+  					<p th:utext="${card.getName()}"></p>
+  					<p th:utext="${card.getDescription()}"></p>
+  					<p th:utext="${card.getFamily()}"></p>
+  					<p th:utext="${card.getAffinity()}"></p>
+  					 <img class="ui centered tiny  image" src={{card.getSmallImgUrl()}}>
+  					<p th:utext="${card.getEnergy()}"></p>
+  					<p th:utext="${card.getHp()}"></p>
+  					<p th:utext="${card.getDefence()}"></p>
+  					<p th:utext="${card.getAttack()}"></p>
+  					<p th:utext="${card.getPrice()}"></p>
   				</div>
   			<li>
   		</ul>
